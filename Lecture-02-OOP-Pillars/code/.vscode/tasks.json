@@ -1,0 +1,31 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "javac: build all",
+            "type": "process",
+            "command": "javac",
+            "args": [
+                "-d", "out",
+                "--source-path", "src",
+                "src/com/foodapp/Main.java",
+                "src/com/foodapp/quiz/q03/Quiz03LeakyGetter.java",
+                "src/com/foodapp/quiz/q05/Quiz05ConstructorOrder.java",
+                "src/com/foodapp/quiz/q06/Quiz06MissingOverride.java",
+                "src/com/foodapp/quiz/q10/Quiz10Upcasting.java",
+                "src/com/foodapp/quiz/q11/Quiz11Downcasting.java",
+                "src/com/foodapp/quiz/q12/Quiz12Overloading.java"
+            ],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": []
+        },
+        {
+            "label": "java: run Main",
+            "type": "process",
+            "command": "java",
+            "args": ["-cp", "out", "com.foodapp.Main"],
+            "dependsOn": "javac: build all",
+            "problemMatcher": []
+        }
+    ]
+}
